@@ -13,29 +13,23 @@ const images = [
   },
 ];
 
-const list = document.querySelector(".gallery"); // Пошук списку
+const list = document.querySelector(".gallery");
 
-// Перебираємо масив об'єктів.
-// На кожній ітерації створюємо елемент списку з фотографією.
-// Беремо данні з масиву об'єктів: посилання + альтернативний текст.
 const htmlMarkup = images
   .map(
     (image) =>
-      `<li><img class="photo" src="${image.url}" width="333" alt="${image.alt}"></li>`
+      `<li><img class="photo" src="${image.url}" width="400" height="300"alt="${image.alt}"></li>`
   )
-  .join(""); // Прибираємо кому після кожного фото, додаючи пустий символ ""
-
-// Додавання до розмітки наших елементів списку з фото
+  .join("");
 list.insertAdjacentHTML("beforeend", htmlMarkup);
 
-// Стилізація через JS
-const photos = document.querySelectorAll(".photo"); // Пошук всіх фотографій
+const photos = document.querySelectorAll(".photo");
 
 list.style.display = "flex";
 list.style.gap = "30px";
-list.style.padding = "50px";
+list.style.padding = "25px";
 list.style.justifyContent = "center";
 list.style.alignItems = "center";
 list.style.listStyleType = "none";
-list.style.borderRadius = "50px";
-list.style.backgroundColor = "darkseagreen";
+list.style.borderRadius = "5px";
+list.style.backgroundColor = "black";
